@@ -6,13 +6,13 @@ Installation
 ------------
 #### Laravel Version Compatibility
 
-Laravel  | Package
-:---------|:----------
- 5.8.x    | 0.1.9
- 6.x      | 0.1.9
- 7.x      | 0.1.9
- 8.x - 10.x      | 1.x
-
+| Laravel    | Package |
+|:-----------|:--------|
+| 5.8.x      | 0.1.9   |
+| 6.x        | 0.1.9   |
+| 7.x        | 0.1.9   |
+| 8.x - 10.x | 1.x     |
+| 12.x       | 2.x     |
 
 #### Via Composer
 

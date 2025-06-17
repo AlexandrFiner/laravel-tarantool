@@ -12,10 +12,10 @@
     ],
     "require": {
         "php": "^7.3|^8.0",
-        "illuminate/support": "^10.0",
-        "illuminate/container": "^10.0",
-        "illuminate/database": "^10.0",
-        "illuminate/events": "^10.0",
+        "illuminate/support": "^12.0",
+        "illuminate/container": "^12.0",
+        "illuminate/database": "^12.0",
+        "illuminate/events": "^12.0",
         "rybakit/msgpack": "^0.9",
         "tarantool/client": "^0.10.0"
     },

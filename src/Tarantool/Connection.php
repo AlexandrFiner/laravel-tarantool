@@ -158,7 +158,7 @@ class Connection extends BaseConnection
      */
     protected function getDefaultQueryGrammar()
     {
-        return new QGrammar();
+        return new QGrammar($this);
     }
 
     /**
@@ -166,6 +166,6 @@ class Connection extends BaseConnection
      */
     protected function getDefaultSchemaGrammar()
     {
-        return new SGrammar();
+        return new SGrammar($this);
     }
 }

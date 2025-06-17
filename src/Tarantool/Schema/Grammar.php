@@ -28,12 +28,13 @@ class Grammar extends BaseGrammar
     /**
      * Wrap a single string in keyword identifiers.
      *
-     * @param mixed $table
+     * @param  mixed  $table
+     * @param  null  $prefix
      * @return string
      */
-    public function wrapTable($table)
+    public function wrapTable($table, $prefix = null)
     {
-        $value = parent::wrapTable($table);
+        $value = parent::wrapTable($table, $prefix);
 
         return strtoupper($value);
     }
@@ -43,9 +44,9 @@ class Grammar extends BaseGrammar
      *
      * @return string
      */
-    public function compileTableExists()
+    public function compileTableExists($schema, $table): string
     {
-        return 'select * from "_space" where "name" = ?';
+        return 'select * from "_space" where "name" = ' . $this->quoteString($table);
     }
 
     /**
@@ -106,10 +107,9 @@ class Grammar extends BaseGrammar
      *
      * @param  \Illuminate\Database\Schema\Blueprint $blueprint
      * @param  \Illuminate\Support\Fluent $command
-     * @param Connection $connection
      * @return string
      */
-    public function compileCreate(Blueprint $blueprint, Fluent $command, Connection $connection)
+    public function compileCreate(Blueprint $blueprint, Fluent $command)
     {
         $columns = $this->autoAddPrimaryKey($this->getColumns($blueprint));
         $sql = 'CREATE TABLE IF NOT EXISTS '.$this->wrapTable($blueprint)." ($columns)";
